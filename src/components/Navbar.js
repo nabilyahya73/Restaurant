@@ -71,6 +71,16 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                to="/view-bookings"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
+                View Bookings
+              </NavLink>
+            </li>
             <li className="nav-item ms-lg-3 mt-3 mt-lg-0">
               <Link
                 to="/reservation"
