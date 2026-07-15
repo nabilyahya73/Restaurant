@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Hero from "../components/Hero";
 import SectionTitle from "../components/SectionTitle";
 import FoodCard from "../components/FoodCard";
-import { menuData } from "../data/menuData";
+import { menuData } from "../context/foodContext";
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState("all");

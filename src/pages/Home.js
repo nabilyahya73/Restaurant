@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import SectionTitle from "../components/SectionTitle";
 import FoodCard from "../components/FoodCard";
-import { menuData } from "../data/menuData";
+import { menuData } from "../context/foodContext";
 
 const Home = () => {
   // Extract featured menu items for display on home
