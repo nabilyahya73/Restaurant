@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import SectionTitle from "../components/SectionTitle";
+import { useBookings } from "../context/BookingContext"; // Import the context hook
 
 const Reservation = () => {
+  const { addBooking } = useBookings(); // Retrieve the booking action from Context
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +34,9 @@ const Reservation = () => {
       setValidated(true);
     } else {
       setValidated(true);
-      // Mock API call behavior success
+
+      // Save data globally using context (saves to State + LocalStorage)
+      addBooking(formData);
       setSubmitted(true);
     }
   };
@@ -71,15 +77,34 @@ const Reservation = () => {
                     has been sent to <strong>{formData.email}</strong>. We look
                     forward to hosting you.
                   </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setValidated(false);
-                    }}
-                    className="btn btn-taste-orange px-5 py-2 rounded-pill mx-auto d-inline"
-                  >
-                    Make Another Booking
-                  </button>
+
+                  {/* Updated Action Buttons to Route or Reset */}
+                  <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setValidated(false);
+                        setFormData({
+                          name: "",
+                          email: "",
+                          phone: "",
+                          guests: "2",
+                          date: "",
+                          time: "18:00",
+                          requests: "",
+                        });
+                      }}
+                      className="btn btn-outline-secondary px-4 py-2 rounded-pill"
+                    >
+                      Make Another Booking
+                    </button>
+                    <Link
+                      to="/bookings"
+                      className="btn btn-taste-orange px-4 py-2 rounded-pill text-decoration-none text-white fw-bold"
+                    >
+                      View All Bookings
+                    </Link>
+                  </div>
                 </div>
               ) : (
                 <div className="card border-0 shadow p-4 p-md-5 bg-light">
@@ -142,7 +167,7 @@ const Reservation = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Please supply a dynamic phone number.
+                          Please supply a phone number.
                         </div>
                       </div>
 
