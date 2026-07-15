@@ -1,0 +1,100 @@
+/* Custom Variable Styling for Taste Restaurant */
+:root {
+  --primary-orange: #E67E22;
+  --secondary-olive: #556B2F;
+  --light-beige: #FDFBF7;
+  --dark-charcoal: #2C3E50;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Playfair Display', 'Segoe UI', serif;
+  background-color: var(--light-beige);
+  color: var(--dark-charcoal);
+  overflow-x: hidden;
+}
+
+/* Custom Typography & Accent Colors */
+.text-orange {
+  color: var(--primary-orange) !important;
+}
+
+.text-olive {
+  color: var(--secondary-olive) !important;
+}
+
+.bg-orange {
+  background-color: var(--primary-orange) !important;
+}
+
+.bg-olive {
+  background-color: var(--secondary-olive) !important;
+}
+
+/* Button Custom Stylings */
+.btn-taste-orange {
+  background-color: var(--primary-orange);
+  color: #fff;
+  border: none;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-taste-orange:hover {
+  background-color: #d35400;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-taste-olive {
+  background-color: var(--secondary-olive);
+  color: #fff;
+  border: none;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-taste-olive:hover {
+  background-color: #3d4e22;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Navbar Links Custom Transitions */
+.nav-link {
+  font-weight: 500;
+  transition: color var(--transition-speed) ease;
+}
+
+.nav-link.active-link {
+  color: var(--primary-orange) !important;
+  border-bottom: 2px solid var(--primary-orange);
+}
+
+/* Hero Overlay Graphic */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* FoodCard Smooth Hover Animation */
+.food-card {
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  border: none;
+  overflow: hidden;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Feature Icon Accent */
+.feature-icon-wrapper {
+  background-color: rgba(230, 126, 34, 0.1);
+  color: var(--primary-orange);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+}
